@@ -1,6 +1,6 @@
 # TcpFormalLab
 
-.NET 10、TLA+、Lean 4 を使う日本語の段階的学習プロジェクトです。現在の完成範囲は **演習1の純粋な Client 状態遷移**です。TCP 通信、サーバー、セッション、競合処理、演習2以降は未実装です。
+.NET 10、TLA+、Lean 4 を使う日本語の段階的学習プロジェクトです。標準 .NET TCP API を使い、アプリケーション固有の並行操作、Task、所有権と終了処理を形式手法で学びます。独自状態機械は要件がある場合だけ検討します。現在の成果は **演習1の純粋な状態機械の入門教材**です。TCP 通信、サーバー、セッション、競合処理、演習2以降は未実装です。
 
 Ubuntu、Git、curl、Java 11 以降、.NET SDK 10.0.114 が必要です。SDK は `global.json` で固定しています。公式の現行 SDK は 10.0.403 ですが、この環境にある 10.0.114 を再現用に固定しており、更新時は global.json と検証を併せて変更します。
 
@@ -24,15 +24,15 @@ Ubuntu、Git、curl、Java 11 以降、.NET SDK 10.0.114 が必要です。SDK �
 
 | 演習 | GitHub Issue | 依存 |
 |---|---|---|
-| EX-01 Client 状態遷移 | [#1](https://github.com/owhinata/TcpFormalLab/issues/1) | なし |
-| EX-02 Connect/Close | [#2](https://github.com/owhinata/TcpFormalLab/issues/2) | EX-01 |
-| EX-03 Server 状態遷移 | [#3](https://github.com/owhinata/TcpFormalLab/issues/3) | EX-01 |
-| EX-04 Accept/Stop | [#4](https://github.com/owhinata/TcpFormalLab/issues/4) | EX-02、EX-03 |
-| EX-05 Session | [#5](https://github.com/owhinata/TcpFormalLab/issues/5) | EX-03 |
-| EX-06 複数 Client | [#6](https://github.com/owhinata/TcpFormalLab/issues/6) | EX-04、EX-05 |
-| EX-07 統合モデル | [#7](https://github.com/owhinata/TcpFormalLab/issues/7) | EX-02、EX-04〜06 |
+| EX-01 標準 TcpClient とアプリケーション状態 | [#1](https://github.com/owhinata/TcpFormalLab/issues/1) | なし |
+| EX-02 WriteAsync / Dispose | [#2](https://github.com/owhinata/TcpFormalLab/issues/2) | EX-01 |
+| EX-03 Accept ループ | [#3](https://github.com/owhinata/TcpFormalLab/issues/3) | EX-01 |
+| EX-04 Accept / Stop | [#4](https://github.com/owhinata/TcpFormalLab/issues/4) | EX-02、EX-03 |
+| EX-05 所有権と終了 | [#5](https://github.com/owhinata/TcpFormalLab/issues/5) | EX-03 |
+| EX-06 複数 Client と Task と Task | [#6](https://github.com/owhinata/TcpFormalLab/issues/6) | EX-04、EX-05 |
+| EX-07 Client-Server 非同期処理 | [#7](https://github.com/owhinata/TcpFormalLab/issues/7) | EX-02、EX-04〜06 |
 | EX-08 Safety/Liveness | [#8](https://github.com/owhinata/TcpFormalLab/issues/8) | EX-07 |
-| EX-09 Refinement | [#9](https://github.com/owhinata/TcpFormalLab/issues/9) | EX-07、EX-08 |
+| EX-09 モデルと実装の対応 | [#9](https://github.com/owhinata/TcpFormalLab/issues/9) | EX-07、EX-08 |
 
 環境構築の確認は [#10](https://github.com/owhinata/TcpFormalLab/issues/10)、CI の GitHub 上での確認は [#11](https://github.com/owhinata/TcpFormalLab/issues/11) です。Issue Forms、PR テンプレート、Actions はこれらのファイルを GitHub に反映した後に利用できます。
 
