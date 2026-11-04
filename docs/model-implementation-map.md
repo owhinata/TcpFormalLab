@@ -1,9 +1,13 @@
-# 対応表
+# モデルと実装の対応
 
-| 概念 | C# | TLA+ | Lean |
+既存の演習1は TCP 実装ではなく、状態機械の入門教材です。
+
+| 概念 | C# の純粋な教材 | TLA+ の抽象モデル | Lean の純粋関数 |
 |---|---|---|---|
 | 状態 | ClientState | state | State |
-| 更新 | Step | Next | step |
-| Dispose の終端性 | 無効なら null | Terminal | disposed_terminal |
+| 更新 | ClientMachine.Step | Next | step |
+| Dispose の終端性 | テストで例を確認 | Terminal を有限範囲で検査 | disposed_terminal を証明 |
 
-C#/Lean は不正操作を null/none で拒否し、TLA+ は対応する遷移を持ちません。TLA+ の stuttering は状態が変わらない抽象的なステップで、拒否された個別 API 呼び出しの表現ではありません。世代や I/O は含みません。
+C#/Lean は不正操作を null/none で拒否し、TLA+ は対応する遷移を持ちません。TLA+ の stuttering は状態を変えない抽象ステップで、個別 API 呼び出しの拒否ではありません。これらは Socket の状態や通信を表現しません。C# のテスト、TLC の有限検査、Lean の定理はそれぞれ対象が異なり、対応自体の形式的証明はありません。
+
+後続演習では、操作の受付・終了、Task と所有権の具体的実装をモデルの Action や純粋関数と対応付け、線形化点、仮定、証明・検査・テスト・未検証の範囲を個別に記録します。現時点では未実装・未検証です。
