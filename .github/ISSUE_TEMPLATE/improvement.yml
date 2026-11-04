@@ -1,0 +1,22 @@
+name: 改善
+description: 改善を提案する
+labels: ["type:infrastructure"]
+body:
+  - type: textarea
+    id: field_0
+    attributes:
+      label: 背景
+    validations:
+      required: true
+  - type: textarea
+    id: field_1
+    attributes:
+      label: 提案
+    validations:
+      required: true
+  - type: textarea
+    id: field_2
+    attributes:
+      label: 完了条件
+    validations:
+      required: true

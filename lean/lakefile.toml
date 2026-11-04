@@ -1,0 +1,6 @@
+name = "TcpFormalLab"
+version = "0.1.0"
+defaultTargets = ["TcpFormalLab"]
+
+[[lean_lib]]
+name = "TcpFormalLab"

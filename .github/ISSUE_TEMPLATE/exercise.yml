@@ -1,0 +1,53 @@
+name: 演習
+description: 学習課題を提案する
+title: "[EX-XX] "
+labels: ["type:exercise"]
+body:
+  - type: textarea
+    id: field_0
+    attributes:
+      label: 学習目標
+    validations:
+      required: true
+  - type: textarea
+    id: field_1
+    attributes:
+      label: 前提知識
+    validations:
+      required: false
+  - type: textarea
+    id: field_2
+    attributes:
+      label: 背景
+    validations:
+      required: true
+  - type: textarea
+    id: field_3
+    attributes:
+      label: 課題
+    validations:
+      required: true
+  - type: textarea
+    id: field_4
+    attributes:
+      label: 検証する性質
+    validations:
+      required: true
+  - type: textarea
+    id: field_5
+    attributes:
+      label: 成果物
+    validations:
+      required: true
+  - type: textarea
+    id: field_6
+    attributes:
+      label: 完了条件
+    validations:
+      required: true
+  - type: textarea
+    id: field_7
+    attributes:
+      label: 参考資料
+    validations:
+      required: false

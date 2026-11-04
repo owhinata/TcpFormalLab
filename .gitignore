@@ -1,0 +1,6 @@
+**/bin/
+**/obj/
+.tools/
+lean/.lake/
+tla/**/states/
+tla/**/MC*.bin
