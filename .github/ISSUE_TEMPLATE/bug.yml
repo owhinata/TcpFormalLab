@@ -1,0 +1,28 @@
+name: 不具合
+description: 不具合を報告する
+labels: ["type:bug"]
+body:
+  - type: textarea
+    id: field_0
+    attributes:
+      label: 現象
+    validations:
+      required: true
+  - type: textarea
+    id: field_1
+    attributes:
+      label: 再現手順
+    validations:
+      required: true
+  - type: textarea
+    id: field_2
+    attributes:
+      label: 期待する動作
+    validations:
+      required: true
+  - type: textarea
+    id: field_3
+    attributes:
+      label: 環境とログ
+    validations:
+      required: true
